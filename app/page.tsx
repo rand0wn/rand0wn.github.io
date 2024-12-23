@@ -151,9 +151,9 @@ export default function Portfolio() {
       {/* Contact Section */}
       <section className="py-20 px-4 md:px-6 lg:px-8 bg-muted/50">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4">Let's Connect</h2>
+          <h2 className="text-3xl font-bold mb-4">Lets Connect</h2>
           <p className="text-lg text-muted-foreground mb-8">
-            I'm always interested in hearing about new projects and opportunities.
+            I am always interested in hearing about new projects and opportunities.
           </p>
           <div className="flex justify-center gap-4">
             <Button asChild>
