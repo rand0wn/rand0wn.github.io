@@ -35,7 +35,7 @@ export default function UpworkProfile() {
             ))}
           </div>
           <p className="mt-6 font-semibold">
-            Ready to leverage AI for your business? Let's discuss how my services can help you achieve your goals with cutting-edge AI solutions.
+            Ready to leverage AI for your business? Lets discuss how my services can help you achieve your goals with cutting-edge AI solutions.
           </p>
         </CardContent>
       </Card>
