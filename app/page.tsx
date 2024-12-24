@@ -1,218 +1,230 @@
-import { Github, Linkedin, Mail, MapPin } from 'lucide-react'
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { ExternalLink } from 'lucide-react'
 
-export default function Portfolio() {
+export default function UpworkProfile() {
   return (
-    <div className="min-h-screen bg-background">
-      {/* Hero Section */}
-      <section className="relative py-20 px-4 md:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid gap-8 md:grid-cols-2 items-center">
-            <div>
-              <h1 className="text-4xl font-bold tracking-tight">Abhishek Singh Kushwah</h1>
-              <p className="mt-4 text-xl text-muted-foreground">
-                Senior AI Developer with expertise in ML solutions, NLP, and LLMs
-              </p>
-              <div className="flex items-center gap-2 mt-4 text-muted-foreground">
-                <MapPin className="h-4 w-4" />
-                Delhi, India
-              </div>
-              <div className="flex gap-4 mt-6">
-                <Button variant="outline" asChild>
-                  <a href="https://linkedin.com/in/abhisheksinghkushwah" target="_blank" rel="noopener noreferrer">
-                    <Linkedin className="h-4 w-4 mr-2" />
-                    LinkedIn
-                  </a>
-                </Button>
-                <Button variant="outline" asChild>
-                  <a href="mailto:abhishek18kushwah@gmail.com">
-                    <Mail className="h-4 w-4 mr-2" />
-                    Email
-                  </a>
-                </Button>
-                <Button variant="outline" asChild>
-                  <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
-                    <Github className="h-4 w-4 mr-2" />
-                    GitHub
-                  </a>
-                </Button>
-              </div>
-            </div>
-            <Card>
-              <CardContent className="p-6">
-                <p className="text-lg">
-                  With extensive experience in developing end-to-end machine learning solutions and integrating them
-                  seamlessly into products, I excel in addressing real-world challenges. Skilled in bootstrapping scalable
-                  products from inception to deployment, I handle architecture, design, and client stakeholder management
-                  adeptly.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
+    <div className="max-w-4xl mx-auto p-4">
+      <Card className="mb-8">
+        <CardHeader>
+          <CardTitle className="text-2xl font-bold">Senior AI Developer | LLM Expert | MLOps Engineer</CardTitle>
+          <a href="https://www.upwork.com/freelancers/abhisheksinghkushwah" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline flex items-center">
+            Upwork Profile <ExternalLink className="ml-1 h-4 w-4" />
+          </a>
+        </CardHeader>
+      </Card>
 
-      {/* Skills Section */}
-      <section className="py-20 px-4 md:px-6 lg:px-8 bg-muted/50">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8">Skills & Expertise</h2>
-          <Tabs defaultValue="ml" className="w-full">
-            <TabsList className="grid w-full grid-cols-2 md:grid-cols-5 mb-8">
-              <TabsTrigger value="ml">ML & Data Science</TabsTrigger>
-              <TabsTrigger value="nlp">NLP/DL/CV</TabsTrigger>
-              <TabsTrigger value="backend">Backend</TabsTrigger>
-              <TabsTrigger value="mlops">ML OPS</TabsTrigger>
-              <TabsTrigger value="llm">LLM</TabsTrigger>
-            </TabsList>
-            <TabsContent value="ml" className="space-y-2">
-              {["R", "NumPy", "Pandas", "Jupyter Notebook", "Scikit-Learn", "Data Visualization", "Machine Learning", "Matplotlib", "Data Analysis"].map((skill) => (
-                <Badge key={skill} variant="secondary" className="mr-2 mb-2">
-                  {skill}
-                </Badge>
-              ))}
-            </TabsContent>
-            <TabsContent value="nlp" className="space-y-2">
-              {["OpenCV", "PyTorch", "TensorFlow", "BERT", "Transformer Networks", "RASA", "SpaCy", "NLTK"].map((skill) => (
-                <Badge key={skill} variant="secondary" className="mr-2 mb-2">
-                  {skill}
-                </Badge>
-              ))}
-            </TabsContent>
-            <TabsContent value="backend" className="space-y-2">
-              {["Python", "Flask", "FastAPI", "Django", "Node.js", "REST APIs"].map((skill) => (
-                <Badge key={skill} variant="secondary" className="mr-2 mb-2">
-                  {skill}
-                </Badge>
-              ))}
-            </TabsContent>
-            <TabsContent value="mlops" className="space-y-2">
-              {["Git", "GCP", "AWS", "Azure", "CI/CD", "Kubernetes", "Docker", "Terraform"].map((skill) => (
-                <Badge key={skill} variant="secondary" className="mr-2 mb-2">
-                  {skill}
-                </Badge>
-              ))}
-            </TabsContent>
-            <TabsContent value="llm" className="space-y-2">
-              {["LangChain", "LlamaIndex", "OpenAI", "Claude", "RAG", "Mixtral", "vLLM", "PEFT", "QLoRA"].map((skill) => (
-                <Badge key={skill} variant="secondary" className="mr-2 mb-2">
-                  {skill}
-                </Badge>
-              ))}
-            </TabsContent>
-          </Tabs>
-        </div>
-      </section>
-
-      {/* Experience Section */}
-      <section className="py-20 px-4 md:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8">Work Experience</h2>
-          <div className="space-y-8">
-            <ExperienceCard
-              title="Senior AI Developer (Freelance)"
-              company="Timmermann Group"
-              period="Aug 2023 - Present"
-              location="Munich (Remote)"
-              description={[
-                "Developed an AI coach using Multi-Agent Architecture, LLMs, and prompt tuning APIs",
-                "Led development leveraging Self-hosted Large Language Models with Multi-Agent Parallel Architecture",
-                "Implemented Unstructured RAG systems with Zep in Llama Index and MongoDB",
-                "Spearheaded cognitive architecture design, integrating STT and TTS capabilities"
-              ]}
-            />
-            <ExperienceCard
-              title="Technical Lead (NLU)"
-              company="Reverie Language Technologies (JIO)"
-              period="Jan 2022 - Aug 2023"
-              description={[
-                "Created a cross-platform search for 11 Indian languages",
-                "Handled more than a million requests per day for Jio Apps",
-                "Led R&D team for improving architecture and client integrations",
-                "Created a multilingual SaaS-based chatbot development platform"
-              ]}
-            />
-            <ExperienceCard
-              title="Freelance AI Consultant"
-              company="Vengage.AI"
-              period="Feb 2021 - Dec 2021"
-              description={[
-                "Designed a conversational agent bridging patients and hospitals",
-                "Implemented multi-channel support: Call, WhatsApp, Web, and Mobile App",
-                "Developed support for 4 languages: English, Hindi, Kannada, and Malayalam"
-              ]}
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section className="py-20 px-4 md:px-6 lg:px-8 bg-muted/50">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4">Lets Connect</h2>
-          <p className="text-lg text-muted-foreground mb-8">
-            I am always interested in hearing about new projects and opportunities.
+      <Card className="mb-8">
+        <CardHeader>
+          <CardTitle>Services Offered</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="mb-4">
+            As a Senior AI Developer with 6+ years of experience, I specialize in delivering end-to-end AI solutions. Here are the key services I offer:
           </p>
-          <div className="flex justify-center gap-4">
-            <Button asChild>
-              <a href="mailto:abhishek18kushwah@gmail.com">
-                <Mail className="h-4 w-4 mr-2" />
-                Email Me
-              </a>
-            </Button>
-            <Button variant="outline" asChild>
-              <a href="https://linkedin.com/in/abhisheksinghkushwah" target="_blank" rel="noopener noreferrer">
-                <Linkedin className="h-4 w-4 mr-2" />
-                Connect on LinkedIn
-              </a>
-            </Button>
+          <div className="space-y-6">
+            {services.map((service, index) => (
+              <div key={index}>
+                <h3 className="text-lg font-semibold mb-2">{index + 1}. {service.title}</h3>
+                <ul className="list-disc pl-5 space-y-1">
+                  {service.items.map((item, itemIndex) => (
+                    <li key={itemIndex}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
-        </div>
-      </section>
+          <p className="mt-6 font-semibold">
+            Ready to leverage AI for your business? Let's discuss how my services can help you achieve your goals with cutting-edge AI solutions.
+          </p>
+        </CardContent>
+      </Card>
+
+      <Card className="mb-8">
+        <CardHeader>
+          <CardTitle>Recent Projects & Achievements</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-6">
+            {projects.map((project, index) => (
+              <div key={index}>
+                <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
+                <p className="text-sm text-gray-600 mb-2">{project.company}</p>
+                <ul className="list-disc pl-5 space-y-1">
+                  {project.achievements.map((achievement, achievementIndex) => (
+                    <li key={achievementIndex}>{achievement}</li>
+                  ))}
+                </ul>
+                <div className="mt-2">
+                  <span className="font-semibold">Technologies:</span> {project.technologies}
+                </div>
+              </div>
+            ))}
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card className="mb-8">
+        <CardHeader>
+          <CardTitle>Technical Skills</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-4">
+            {skills.map((skillCategory, index) => (
+              <div key={index}>
+                <h3 className="text-lg font-semibold mb-2">{skillCategory.category}</h3>
+                <div className="flex flex-wrap gap-2">
+                  {skillCategory.skills.map((skill, skillIndex) => (
+                    <Badge key={skillIndex} variant="secondary">{skill}</Badge>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Why Choose Me?</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <ul className="list-disc pl-5 space-y-2">
+            {reasons.map((reason, index) => (
+              <li key={index}>
+                <span className="font-semibold">{reason.title}:</span> {reason.description}
+              </li>
+            ))}
+          </ul>
+        </CardContent>
+      </Card>
     </div>
   )
 }
 
-function ExperienceCard({
-  title,
-  company,
-  period,
-  location,
-  description
-}: {
-  title: string
-  company: string
-  period: string
-  location?: string
-  description: string[]
-}) {
-  return (
-    <Card>
-      <CardContent className="p-6">
-        <div className="space-y-4">
-          <div>
-            <h3 className="text-xl font-bold">{title}</h3>
-            <p className="text-muted-foreground">{company}</p>
-            <div className="flex items-center gap-4 text-sm text-muted-foreground mt-1">
-              <span>{period}</span>
-              {location && (
-                <>
-                  <span>•</span>
-                  <span>{location}</span>
-                </>
-              )}
-            </div>
-          </div>
-          <ul className="list-disc list-inside space-y-2">
-            {description.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
-        </div>
-      </CardContent>
-    </Card>
-  )
-}
+const services = [
+  {
+    title: "Large Language Model (LLM) Implementation",
+    items: [
+      "Custom LLM development and fine-tuning",
+      "Implementation of Retrieval-Augmented Generation (RAG) systems",
+      "Multi-agent AI system architecture",
+      "Prompt engineering and optimization"
+    ]
+  },
+  {
+    title: "Natural Language Processing (NLP) Solutions",
+    items: [
+      "Multilingual NLP systems development (supporting 11+ languages)",
+      "Custom NLP model creation for specific industry needs",
+      "Sentiment analysis and entity extraction pipelines",
+      "Conversational AI and chatbot development"
+    ]
+  },
+  {
+    title: "MLOps & Production AI Systems",
+    items: [
+      "End-to-end machine learning pipeline design and implementation",
+      "Scalable AI infrastructure setup on cloud platforms (AWS, GCP, Azure)",
+      "Model monitoring, versioning, and maintenance systems",
+      "CI/CD implementation for machine learning workflows"
+    ]
+  },
+  {
+    title: "AI-Powered Search and Recommendation Systems",
+    items: [
+      "Large-scale, multi-language search engine development",
+      "Personalized recommendation algorithms",
+      "Content categorization and tagging systems"
+    ]
+  },
+  {
+    title: "AI Consulting and Architecture Design",
+    items: [
+      "AI strategy development for businesses",
+      "Technical architecture design for AI projects",
+      "AI feasibility studies and proof-of-concept development"
+    ]
+  },
+  {
+    title: "Custom AI Solution Development",
+    items: [
+      "Tailored AI solutions for specific business problems",
+      "Integration of AI capabilities into existing products",
+      "Performance optimization of AI models and systems"
+    ]
+  }
+]
+
+const projects = [
+  {
+    title: "AI Coaching Platform",
+    company: "Timmermann Group",
+    achievements: [
+      "Architected a sophisticated AI coach using Multi-Agent Architecture and LLMs",
+      "Implemented self-hosted Large Language Models with parallel processing",
+      "Developed Retrieval-Augmented Generation (RAG) systems using Zep and MongoDB",
+      "Integrated real-time Speech-to-Text and Text-to-Speech capabilities"
+    ],
+    technologies: "LangChain, LlamaIndex, PyTorch, FastAPI, Docker"
+  },
+  {
+    title: "Multilingual Search Engine",
+    company: "Jio",
+    achievements: [
+      "Built cross-platform search supporting 11 Indian languages",
+      "Scaled system to handle 1M+ daily requests across Jio Apps",
+      "Led R&D team for architecture optimization"
+    ],
+    technologies: "Elasticsearch, Kubernetes, FastAPI, TensorFlow"
+  },
+  {
+    title: "Healthcare AI Assistant",
+    company: "Vengage.AI",
+    achievements: [
+      "Designed conversational AI for patient-hospital communication",
+      "Implemented multi-channel support: Call, WhatsApp, Web, Mobile",
+      "Developed support for 4 languages with dynamic conversation flows"
+    ],
+    technologies: "RASA, Twilio, AWS, FastAPI"
+  }
+]
+
+const skills = [
+  {
+    category: "AI/ML Technologies",
+    skills: ["LangChain", "LlamaIndex", "OpenAI", "Claude", "PyTorch", "TensorFlow", "BERT", "Transformers", "Scikit-learn", "Pandas", "NumPy", "Matplotlib", "SpaCy", "NLTK", "Hugging Face"]
+  },
+  {
+    category: "Cloud & Infrastructure",
+    skills: ["AWS", "GCP", "Azure", "Docker", "Kubernetes", "GitLab CI", "GitHub Actions", "Prometheus", "Grafana"]
+  },
+  {
+    category: "Backend Development",
+    skills: ["Python", "Node.js", "Shell", "FastAPI", "Flask", "Django", "MongoDB", "Redis", "Elasticsearch", "Kafka", "RabbitMQ"]
+  }
+]
+
+const reasons = [
+  {
+    title: "Comprehensive AI Expertise",
+    description: "I offer end-to-end AI solutions, from initial concept and data engineering to model development and production deployment."
+  },
+  {
+    title: "Proven Track Record",
+    description: "Successfully delivered complex AI projects for startups and enterprises, consistently meeting deadlines and exceeding expectations."
+  },
+  {
+    title: "Cutting-Edge Technology Focus",
+    description: "Deep expertise in state-of-the-art AI technologies, particularly in LLMs and NLP, with a focus on building production-ready, scalable solutions."
+  },
+  {
+    title: "Effective Communication",
+    description: "Strong communication skills and experience in stakeholder management ensure smooth project execution and alignment with business goals."
+  },
+  {
+    title: "Customized Solutions",
+    description: "I tailor AI solutions to your specific business needs, ensuring maximum value and ROI from AI implementation."
+  }
+]
 
